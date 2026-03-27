@@ -24,16 +24,16 @@ windows
 
 #### Install docling and easyocr using python package manager
 NB; Docling takes sometime to install
-Use ```
+```
 pip install docling
-```plaintext
+```
 Fedora
 ![step 2](https://github.com/Njeri-Kimaru/Docling_ocr_task/blob/main/screenshots(fedora%20linux)/2.%20installing_docling.jpeg)
 Windows
 ! [step 2](https://github.com/Njeri-Kimaru/Docling_ocr_task/blob/main/Screenshots(windows)/2.%20installing_docling.jpeg)
 ```
 pip install easyocr
-```plaintext
+```
 Fedora
 ![step 3](https://github.com/Njeri-Kimaru/Docling_ocr_task/blob/main/screenshots(fedora%20linux)/3.%20easyocr_install.jpeg)
 Windows
@@ -66,7 +66,7 @@ docling original_scanned_pdfs/hindu_scanned.pdf  #your pdf
 --to md   #specifies output format md markdown
 --output ./markdown_output/  #where the output will be saved
 
-```plaintext
+
 - Here's the output 
 ![easyocr_output](https://github.com/Njeri-Kimaru/Docling_ocr_task/blob/main/screenshots(fedora%20linux)/5.%20easyocr_output.jpeg)
 ##### Here are some of the languages abbreviations you can use in the **ocr-lang**;
@@ -94,14 +94,15 @@ code steps:
 ```
 pip install rapidocr
 pip show rapidocr #to get the version
-```plaintext
+
+
 ![screenshot rapidocr](https://github.com/Njeri-Kimaru/Docling_ocr_task/blob/main/screenshots(fedora%20linux)/6.%20rapidocr_install.jpeg)
 
 - But like seen below you must install onnxruntime
 ![onnxrunntiime rapidocr](https://github.com/Njeri-Kimaru/Docling_ocr_task/blob/main/screenshots(fedora%20linux)/7.%20onnxruntime_rapidocr_install.jpeg)
 
 - Then run your codes to get your output; eg my arabic pdf;
-```
+
 # Arabic
 docling   # we are using docling cli
 --ocr     # ocr
@@ -110,7 +111,7 @@ docling   # we are using docling cli
 --to md                # to markdown format
 --output ./markdown_outputs_rapidocr  #save in this folder
 ./original_scanned_pdfs/arabic_scanned.pdf #arabic pdf
-```plaintext
+
 - Outputs
 ![rapidocr outputs](https://github.com/Njeri-Kimaru/Docling_ocr_task/blob/main/screenshots(fedora%20linux)/8.%20rapidocr_output.jpeg)
  
@@ -120,13 +121,13 @@ docling   # we are using docling cli
 ```
 pip install tesseract
 pip show --version
-```plaintext
+```
 ![tesseract](https://github.com/Njeri-Kimaru/Docling_ocr_task/blob/main/screenshots(fedora%20linux)/9.%20tesseract_install.jpeg)
 - Requires one to install packages for every language.eg for arabic.
-```
+
 curl -L https://github.com/tesseract-ocr/tessdata/raw/main/ara.traineddata -o ~/Documents/docling_ocr/tessdata/ara.traineddata
 - Then run the parsing codes and save them in a folder
-```shell
+```
 docling   # we are using docling cli
 --ocr     # ocr
 --force-ocr 
