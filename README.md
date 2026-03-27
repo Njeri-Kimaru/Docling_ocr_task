@@ -21,7 +21,7 @@ Fedora
 
 
 #### Install docling and easyocr using python package manager
-NB; Docling takes sometime to install
+Docling takes sometime to install
 ```
 pip install docling
 ```
