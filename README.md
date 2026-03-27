@@ -93,7 +93,7 @@ But like seen below you must install onnxruntime
 
 - Then run your codes to get your output; eg my arabic pdf;
 
-# Arabic
+
 docling   # we are using docling cli
 --ocr     # ocr
 --force-ocr 
