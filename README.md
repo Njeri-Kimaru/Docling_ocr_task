@@ -10,7 +10,7 @@ It allows to exract text from:
 
 ### I'll be taking you through the steps of parsing scanned multilingual documents.
 #### Creating a folder and a virtual environment
-```shell
+```
 mkdir your_foldername
 cd your_foldername
 ```
@@ -19,8 +19,6 @@ The first step is to always create a folder where you'll store your files. Then 
 Fedora 
 ![step 1](https://github.com/Njeri-Kimaru/Docling_ocr_task/blob/main/screenshots(fedora%20linux)/1.%20creating_folder_pyversion.jpeg)
 
-windows
-![step 1 windows](https://github.com/Njeri-Kimaru/Docling_ocr_task/blob/main/Screenshots(windows)/1.%20creating_folder_and_venv.jpeg)
 
 #### Install docling and easyocr using python package manager
 NB; Docling takes sometime to install
@@ -29,21 +27,15 @@ pip install docling
 ```
 Fedora
 ![step 2](https://github.com/Njeri-Kimaru/Docling_ocr_task/blob/main/screenshots(fedora%20linux)/2.%20installing_docling.jpeg)
-Windows
-! [step 2](https://github.com/Njeri-Kimaru/Docling_ocr_task/blob/main/Screenshots(windows)/2.%20installing_docling.jpeg)
 ```
 pip install easyocr
 ```
 Fedora
 ![step 3](https://github.com/Njeri-Kimaru/Docling_ocr_task/blob/main/screenshots(fedora%20linux)/3.%20easyocr_install.jpeg)
-Windows
-![step 3](https://github.com/Njeri-Kimaru/Docling_ocr_task/blob/main/Screenshots(windows)/4.%20installing_easyocr_separately.jpeg)
 
 #### Check for the versions of both docling and easyocr.
 Fedora
 ![step 4](https://github.com/Njeri-Kimaru/Docling_ocr_task/blob/main/screenshots(fedora%20linux)/4.%20docling_easyocr_versions.jpeg)
-Windwows
-![step 4](https://github.com/Njeri-Kimaru/Docling_ocr_task/blob/main/Screenshots(windows)/5.%20checking_versions.jpeg)
 
 #### Look for scanned multilingual or non-english pdf.
 I would recomend this site [here](https://archive.org/) for your scanned multilingual documents.
@@ -91,7 +83,7 @@ docling original_scanned_pdfs/hindu_scanned.pdf  #your pdf
 - It converts the languages into html or markdown really fast.
 code steps:
 - install rapidocr using pip
-```
+  
 pip install rapidocr
 pip show rapidocr #to get the version
 
