@@ -59,7 +59,7 @@ docling original_scanned_pdfs/hindu_scanned.pdf  #your pdf
 --output ./markdown_output/  #where the output will be saved
 
 
-- Here's the output 
+Here's the output 
 ![easyocr_output](https://github.com/Njeri-Kimaru/Docling_ocr_task/blob/main/screenshots(fedora%20linux)/5.%20easyocr_output.jpeg)
 ##### Here are some of the languages abbreviations you can use in the **ocr-lang**;
 - English: en
@@ -82,7 +82,7 @@ docling original_scanned_pdfs/hindu_scanned.pdf  #your pdf
 - As the name itself says it is very fast.
 - It converts the languages into html or markdown really fast.
 code steps:
-- install rapidocr using pip
+install rapidocr using pip
   
 pip install rapidocr
 pip show rapidocr #to get the version
@@ -90,7 +90,7 @@ pip show rapidocr #to get the version
 
 ![screenshot rapidocr](https://github.com/Njeri-Kimaru/Docling_ocr_task/blob/main/screenshots(fedora%20linux)/6.%20rapidocr_install.jpeg)
 
-- But like seen below you must install onnxruntime
+But like seen below you must install onnxruntime
 ![onnxrunntiime rapidocr](https://github.com/Njeri-Kimaru/Docling_ocr_task/blob/main/screenshots(fedora%20linux)/7.%20onnxruntime_rapidocr_install.jpeg)
 
 - Then run your codes to get your output; eg my arabic pdf;
@@ -104,12 +104,12 @@ docling   # we are using docling cli
 --output ./markdown_outputs_rapidocr  #save in this folder
 ./original_scanned_pdfs/arabic_scanned.pdf #arabic pdf
 
-- Outputs
+Outputs
 ![rapidocr outputs](https://github.com/Njeri-Kimaru/Docling_ocr_task/blob/main/screenshots(fedora%20linux)/8.%20rapidocr_output.jpeg)
  
 
 ##### 2. Tesseract
-- Install the OCR engine:
+Install the OCR engine:
 ```
 pip install tesseract
 pip show --version
@@ -131,7 +131,7 @@ docling   # we are using docling cli
 ![tesseract output](https://github.com/Njeri-Kimaru/Docling_ocr_task/blob/main/screenshots(fedora%20linux)/10.%20tesseract_output.jpeg)
 
 ##### 3. Tesserocr OCR
-- install the ocr and check the version.
+install the ocr and check the version.
 ![tesserocr](https://github.com/Njeri-Kimaru/Docling_ocr_task/blob/main/screenshots(fedora%20linux)/11.tesserocr_install_version.jpeg)
 - parse the documents and save them in a tesserocr folder
 ```shell
