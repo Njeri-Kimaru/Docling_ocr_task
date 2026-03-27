@@ -126,7 +126,7 @@ docling   # we are using docling cli
 --ocr-engine tesseract  #specify your ocr engine
 --to md                # to markdown format
 --output ./markdown_outputs_tesserocr  #save in this folder
-./original_scanned_pdfs/arabic_scanned.pdf #arabic pdf
+./original_scanned_pdfs/arabic_scanned.pdf 
 ```
 ![tesseract output](https://github.com/Njeri-Kimaru/Docling_ocr_task/blob/main/screenshots(fedora%20linux)/10.%20tesseract_output.jpeg)
 
