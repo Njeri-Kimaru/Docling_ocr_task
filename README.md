@@ -1,146 +1,255 @@
-# **WHAT DOCLING OCR?**
-Docling OCR is an open-source document processing library developed by IBM research. It is designed to parse and convert complex multilingual documents into json or markdown. Most documents need to be parsed before  translating.
+# Docling OCR Task
 
-## What is OCR.
-OCR stands for Optimal Character Recognition ability. 
-It allows to exract text from:
-- images
-- scanned pdfs
-- multilingual documents.
-  
-### Parsing scanned multilingual documents.
-#### Creating a folder and a virtual environment
+## Table of Contents
+
+- [What is Docling OCR?](#what-is-docling-ocr)
+- [What is OCR?](#what-is-ocr)
+- [Repo Structure](#repo-structure)
+- [Python package manager](#python-package-manager)
+- [Setup](#setup)
+- [## Parsing documents using OCR-engines](#Parsing-documents-using-OCR-engines)
+  - [EasyOCR](#1-easyocr)
+  - [RapidOCR](#2-rapidocr)
+  - [Tesseract](#3-tesseract)
+  - [TesserOCR](#4-tesserocr)
+- [Supported Language Codes](#supported-language-codes)
+- [Let's analyse these different OCR-engines.](Let's-analyse-these-different-OCR-engines.)
+- 
+
+---
+
+## What is Docling OCR?
+
+Docling OCR is an open-source document processing library developed by IBM Research. It is designed to parse and convert complex, multilingual documents — including scanned PDFs — into structured formats like Markdown or JSON, making them ready for translation or further processing.
+
+---
+
+## What is OCR?
+
+**OCR** (Optical Character Recognition) is the technology that extracts text from:
+
+- Images
+- Scanned PDFs
+- Multilingual documents
+
+---
+
+## Repo Structure
+
 ```
-mkdir your_foldername
-cd your_foldername
+├── original_scanned_pdfs/
+|   ├── arabic_scanned.pdf
+|   ├── french_scanned_pdf.pdf
+|   ├── hindu_scanned.pdf     
+├── outputs/                      
+│   ├── easyocr_outputs 
+|       ├── arabic_scanned.md
+|       ├── french_scanned.md
+|       ├── hindu_scanned.md
+│   ├── rapidocr_outputs
+|       ├── arabic_scanned.md
+|       ├── french_scanned.md
+|       ├── hindu_scanned.md
+│   ├── tesseract_outputs
+|       ├── arabic_scanned.md
+│   └── tesserocr_outputs
+|       ├── arabic_scanned.md
+├── Screenshots/
+|       ├── screenshots(windows)
+|           ├── 1. creating_folder_and_venv.jpeg
+|           ├── 2. installing_docling.jpeg
+|           ├── 3. installing_easyocr.jpeg
+|           ├── 4. installing_easyocr_separately.jpeg
+|           ├── 5. checking_versions.jpeg
+|       ├── screenshots(fedora linux)/
+|           ├── 1. creating_folder_pyversion.jpeg
+|           ├── 2. installing_docling.jpeg
+|           ├── 3. easyocr_install.jpeg
+|           ├── 4. docling_easyocr_versions.jpeg
+|           ├── 5. easyocr_output.jpeg
+|           ├── 6. rapidocr_install.jpeg
+|           ├── 7. onnxruntime_rapidocr_install.jpeg
+|           ├── 8. rapidocr_output.jpeg
+|           ├── 9. tesseract_install.jpeg
+|           ├── 10. tesseract_output.jpeg
+|           ├── 11.tesserocr_install_version.jpeg
+├── .gitignore   
+└── README.md
 ```
 
-The first step is to always create a folder where you'll store your files. Then cd that folder.
-Fedora 
-![step 1](https://github.com/Njeri-Kimaru/Docling_ocr_task/blob/main/screenshots(fedora%20linux)/1.%20creating_folder_pyversion.jpeg)
+---
 
+## Python package manager
 
-#### Install docling and easyocr using python package manager
-Docling takes sometime to install
+- Python 3.8+
+- pip
+
+For scanned multilingual PDFs to use as test documents, [this site here](https://archive.org/) create an account, search for documents in your target language, and download as PDF.
+
+---
+
+## Setup
+
+**1. Create a project folder and navigate into it:**
+
+```bash
+mkdir docling_ocr_project
+cd docling_ocr_project
 ```
+
+**2. Create and activate a virtual environment:**
+
+```bash
+python -m venv venv
+source venv/bin/activate       # Linux / macOS
+source venv\Scripts\activate          # Windows
+```
+
+**3. Install Docling** (this may take a few minutes):
+
+```bash
 pip install docling
 ```
 
-![step 2](https://github.com/Njeri-Kimaru/Docling_ocr_task/blob/main/screenshots(fedora%20linux)/2.%20installing_docling.jpeg)
+**4. Create an output folder:**
+
+```bash
+mkdir outputs
+cd outputs
+mkdir easyocr_outputs
+mkdir rapidocr_outputs
+mkdir tesseractocr_outputs
+mkdir tesserocr_outputs
 ```
+
+---
+
+## Parsing documents using OCR-engines
+
+The general pattern for running Docling CLI is:
+
+```bash
+docling <path/to/your.pdf> \
+  --ocr \
+  --force-ocr \
+  --ocr-engine <engine> \
+  --ocr-lang <lang-code> \
+  --to md \
+  --output ./outputs/
+```
+
+### 1. EasyOCR
+
+Install:
+
+```bash
 pip install easyocr
-```![step 3](https://github.com/Njeri-Kimaru/Docling_ocr_task/blob/main/screenshots(fedora%20linux)/3.%20easyocr_install.jpeg)
-
-#### Check for the versions of both docling and easyocr.
-
-![step 4](https://github.com/Njeri-Kimaru/Docling_ocr_task/blob/main/screenshots(fedora%20linux)/4.%20docling_easyocr_versions.jpeg)
-
-#### Look for scanned multilingual or non-english pdf.
-I would recomend this site [here](https://archive.org/) for your scanned multilingual documents.
-Create an account and log in and search for the documents you would like to use.
-Finally, download them using pdf format and save them into a folder.
-
-#### Converting document into html or markdown using docling.
-Start by creating a folder where you will save your output files. 
 ```
-mkdir your_folder
-cd your_output_folder
-```plaintext
 
+Run:
+
+```bash
+docling original_scanned_pdfs/french-document.pdf \
+  --ocr \
+  --ocr-engine easyocr \
+  --ocr-lang fr \
+  --to md \
+  --output ./outputs/
 ```
-Then run the following codes using Docling CLI
-docling original_scanned_pdfs/hindu_scanned.pdf  #your pdf
---ocr   #enables ocr since you have a scanned documment
---ocr-engine easyocr   #specifies the ocr engine
---ocr-lang hi  #specifies the language in my case it's hindu
---to md   #specifies output format md markdown
---output ./markdown_output/  #where the output will be saved
 
+---
 
-Here's the output 
-![easyocr_output](https://github.com/Njeri-Kimaru/Docling_ocr_task/blob/main/screenshots(fedora%20linux)/5.%20easyocr_output.jpeg)
-##### Here are some of the languages abbreviations you can use in the **ocr-lang**;
-- English: en
-- Hindi: hi
-- French: fr
-- German: de
-- Spanish: es
-- Portuguese: pt
-- Italian: it
-- Dutch: nl
-- Russian: ru
-- Chinese (Simplified): ch_sim
-- Chinese (Traditional): ch_tra
-- Japanese: ja
-- Korean: ko
-- Arabic: ar
+### 2. RapidOCR
 
-### Now let's try other OCR-engines;
-#### 1. Rapid ocr
-- As the name itself says it is very fast.
-- It converts the languages into html or markdown really fast.
-code steps:
-install rapidocr using pip
-  
+Install:
+
+```bash
 pip install rapidocr
-pip show rapidocr #to get the version
-
-
-![screenshot rapidocr](https://github.com/Njeri-Kimaru/Docling_ocr_task/blob/main/screenshots(fedora%20linux)/6.%20rapidocr_install.jpeg)
-
-But like seen below you must install onnxruntime
-![onnxrunntiime rapidocr](https://github.com/Njeri-Kimaru/Docling_ocr_task/blob/main/screenshots(fedora%20linux)/7.%20onnxruntime_rapidocr_install.jpeg)
-
-- Then run your codes to get your output; eg my arabic pdf;
-
-
-docling   # we are using docling cli
---ocr     # ocr
---force-ocr 
---ocr-engine rapidocr  #specify your ocr engine
---to md                # to markdown format
---output ./markdown_outputs_rapidocr  #save in this folder
-./original_scanned_pdfs/arabic_scanned.pdf #arabic pdf
-
-Outputs
-![rapidocr outputs](https://github.com/Njeri-Kimaru/Docling_ocr_task/blob/main/screenshots(fedora%20linux)/8.%20rapidocr_output.jpeg)
- 
-
-##### 2. Tesseract
-Install the OCR engine:
+pip install onnxruntime    # required dependency
 ```
+
+Run:
+
+```bash
+docling original_scanned_pdfs/arabic-document.pdf \
+  --ocr \
+  --force-ocr \
+  --ocr-engine rapidocr \
+  --to md \
+  --output ./outputs/
+```
+
+---
+
+### 3. Tesseract
+
+Install:
+
+```bash
 pip install tesseract
-pip show --version
 ```
-![tesseract](https://github.com/Njeri-Kimaru/Docling_ocr_task/blob/main/screenshots(fedora%20linux)/9.%20tesseract_install.jpeg)
-- Requires one to install packages for every language.eg for arabic.
 
-curl -L https://github.com/tesseract-ocr/tessdata/raw/main/ara.traineddata -o ~/Documents/docling_ocr/tessdata/ara.traineddata
-- Then run the parsing codes and save them in a folder
-```
-docling   # we are using docling cli
---ocr     # ocr
---force-ocr 
---ocr-engine tesseract  #specify your ocr engine
---to md                # to markdown format
---output ./markdown_outputs_tesserocr  #save in this folder
-./original_scanned_pdfs/arabic_scanned.pdf 
-```
-![tesseract output](https://github.com/Njeri-Kimaru/Docling_ocr_task/blob/main/screenshots(fedora%20linux)/10.%20tesseract_output.jpeg)
+Tesseract requires a separate language data file for each language. For example, to download Arabic:
 
-##### 3. Tesserocr OCR
-install the ocr and check the version.
-![tesserocr](https://github.com/Njeri-Kimaru/Docling_ocr_task/blob/main/screenshots(fedora%20linux)/11.tesserocr_install_version.jpeg)
-- parse the documents and save them in a tesserocr folder
-```shell
-- ocling   # we are using docling cli
---ocr     # ocr
---force-ocr 
---ocr-engine tesserocr  #specify your ocr engine
---to md                # to markdown format
---output ./markdown_outputs_tesserocr  #save in this folder
-./original_scanned_pdfs/arabic_scanned.pdf #arabic pdf
+```bash
+curl -L https://github.com/tesseract-ocr/tessdata/raw/main/ara.traineddata \
+  -o ~/tessdata/ara.traineddata
 ```
+
+Run:
+
+```bash
+docling original_scanned_pdfs/arabic-document.pdf \
+  --ocr \
+  --force-ocr \
+  --ocr-engine tesseract \
+  --to md \
+  --output ./outputs/
+```
+
+---
+
+### 4. TesserOCR
+
+TesserOCR uses Tesseract internally and provides a Python binding.
+
+Install:
+
+```bash
+pip install tesserocr
+```
+
+Run:
+
+```bash
+docling original_scanned_pdfs/arabic-document.pdf \
+  --ocr \
+  --force-ocr \
+  --ocr-engine tesserocr \
+  --to md \
+  --output ./outputs/
+```
+
+
+---
+
+## Supported Language Codes
+
+Use these codes with the `--ocr-lang` flag:
+
+| Language | Code | Language | Code |
+|---|---|---|---|
+| English | `en` | Arabic | `ar` |
+| Hindi | `hi` | Chinese (Simplified) | `ch_sim` |
+| French | `fr` | Chinese (Traditional) | `ch_tra` |
+| German | `de` | Japanese | `ja` |
+| Spanish | `es` | Korean | `ko` |
+| Portuguese | `pt` | Russian | `ru` |
+| Italian | `it` | Dutch | `nl` |
+| Telugu | `te` | | |
+
+---
+
 
 ### Let's analyse these different OCR-engines.
 #### 1. Easyocr
@@ -160,10 +269,3 @@ install the ocr and check the version.
 #### 4. Tesserocr
 - Uses tesseract internally.
 - A bit complex when installing.
-
-
-
-
-
-
-
