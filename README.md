@@ -25,16 +25,14 @@ Docling takes sometime to install
 ```
 pip install docling
 ```
-Fedora
+
 ![step 2](https://github.com/Njeri-Kimaru/Docling_ocr_task/blob/main/screenshots(fedora%20linux)/2.%20installing_docling.jpeg)
 ```
 pip install easyocr
-```
-Fedora
-![step 3](https://github.com/Njeri-Kimaru/Docling_ocr_task/blob/main/screenshots(fedora%20linux)/3.%20easyocr_install.jpeg)
+```![step 3](https://github.com/Njeri-Kimaru/Docling_ocr_task/blob/main/screenshots(fedora%20linux)/3.%20easyocr_install.jpeg)
 
 #### Check for the versions of both docling and easyocr.
-Fedora
+
 ![step 4](https://github.com/Njeri-Kimaru/Docling_ocr_task/blob/main/screenshots(fedora%20linux)/4.%20docling_easyocr_versions.jpeg)
 
 #### Look for scanned multilingual or non-english pdf.
