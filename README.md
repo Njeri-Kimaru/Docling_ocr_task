@@ -13,8 +13,9 @@
   - [Tesseract](#3-tesseract)
   - [TesserOCR](#4-tesserocr)
 - [Supported Language Codes](#supported-language-codes)
+- [why these OCR engines](why-these-ocr-engines)
 - [Let's analyse these different OCR-engines.](Let's-analyse-these-different-OCR-engines.)
-- 
+- [Evaluating the findings](evaluating-the-findings)
 
 ---
 
@@ -249,7 +250,10 @@ Use these codes with the `--ocr-lang` flag:
 | Telugu | `te` | | |
 
 ---
-
+### Why these OCR engines
+- I used easy OCR as it is really easy to use
+- The Rapid OCR is really fast.
+- the tesseract and tesserocr give good results.
 
 ### Let's analyse these different OCR-engines.
 #### 1. Easyocr
@@ -269,3 +273,8 @@ Use these codes with the `--ocr-lang` flag:
 #### 4. Tesserocr
 - Uses tesseract internally.
 - A bit complex when installing.
+
+### Evaluating the findings
+- I saved my results using markdown language and it was really good.
+- The easyOCR, however, did not give a good output to the french_scanned pdf compared to the rest of them.
+
