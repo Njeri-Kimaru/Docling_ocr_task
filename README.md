@@ -7,8 +7,8 @@ It allows to exract text from:
 - images
 - scanned pdfs
 - multilingual documents.
-
-### I'll be taking you through the steps of parsing scanned multilingual documents.
+  
+### Parsing scanned multilingual documents.
 #### Creating a folder and a virtual environment
 ```
 mkdir your_foldername
