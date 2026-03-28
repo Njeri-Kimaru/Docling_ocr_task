@@ -105,12 +105,38 @@ python -m venv venv
 source venv/bin/activate       # Linux / macOS
 source venv\Scripts\activate          # Windows
 ```
+Fedora
+![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/p0dd2jyt5tohbfvdfvxy.jpeg)
 
-**3. Install Docling** (this may take a few minutes):
+Windows
+
+![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5hj3pb47r0hyvqaaifh7.jpeg)
+
+**3. Install Docling and easy ocr** (this may take a few minutes):
 
 ```bash
 pip install docling
 ```
+Fedora
+docling install
+![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bs97icmg6rxw3fw38g2k.png)
+
+easy ocr install
+
+![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/qvmcogez8rvu9nd8g27d.png)
+
+Windows
+
+![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5f45c9xjk6zi6hbhk4px.jpeg)
+
+#### Check for the versions of both docling and easyocr.
+Fedora
+
+![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/j2yid78jnbkjjvbyid7c.png)
+
+Windows
+
+![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zks7nbt169d9kmumufez.jpeg)
 
 **4. Create an output folder:**
 
@@ -157,7 +183,9 @@ docling original_scanned_pdfs/french-document.pdf \
   --to md \
   --output ./outputs/
 ```
-
+Easy OCR output
+![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4ueh79wx2zgw1no3lc2s.png)
+ 
 ---
 
 ### 2. RapidOCR
@@ -168,7 +196,8 @@ Install:
 pip install rapidocr
 pip install onnxruntime    # required dependency
 ```
-
+![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/yyg3jn3ibr1r4mo9tle6.jpeg)
+![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xd5xjlo1v9es8p50q5qr.png)
 Run:
 
 ```bash
@@ -181,7 +210,10 @@ docling original_scanned_pdfs/arabic-document.pdf \
 ```
 
 ---
+Rapidocr output
+![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/0xbxfve1pibaqqylmzoi.png)
 
+ 
 ### 3. Tesseract
 
 Install:
@@ -189,6 +221,7 @@ Install:
 ```bash
 pip install tesseract
 ```
+![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ecj1l6pfot1c0j5z5kdf.png)
 
 Tesseract requires a separate language data file for each language. For example, to download Arabic:
 
@@ -196,7 +229,7 @@ Tesseract requires a separate language data file for each language. For example,
 curl -L https://github.com/tesseract-ocr/tessdata/raw/main/ara.traineddata \
   -o ~/tessdata/ara.traineddata
 ```
-
+![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/oitfh2zzqi90stuwa0mo.png)
 Run:
 
 ```bash
@@ -207,6 +240,7 @@ docling original_scanned_pdfs/arabic-document.pdf \
   --to md \
   --output ./outputs/
 ```
+![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/msm9ixunr2rkap1hq0f0.png)
 
 ---
 
@@ -219,6 +253,13 @@ Install:
 ```bash
 pip install tesserocr
 ```
+- install the ocr and check the version.
+
+![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/r22tesedex591hi9sihn.png)
+- Requires one to install each language package
+
+![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/254ccx6x0ijcsnuwaf5j.png)
+
 
 Run:
 
@@ -230,6 +271,7 @@ docling original_scanned_pdfs/arabic-document.pdf \
   --to md \
   --output ./outputs/
 ```
+![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3k69j6f7e37mwcpnotmm.png)
 
 
 ---
@@ -274,7 +316,12 @@ Use these codes with the `--ocr-lang` flag:
 - Uses tesseract internally.
 - A bit complex when installing.
 
-### Evaluating the findings
-- I saved my results using markdown language and it was really good.
-- The easyOCR, however, did not give a good output to the french_scanned pdf compared to the rest of them.
+#### 5 Ocrmac
+- Requires mac to install.
 
+![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ej4afzq4pwd21m77q915.png)
+
+
+Result Findimgs
+- Other than differing character changes in the french document outputs, the ocr-engines gave almost similar results for the scanned pdfs.
+- I used markdown format and it was pretty good.
