@@ -117,8 +117,7 @@ Windows
 ```bash
 pip install docling
 ```
-Fedora
-docling install
+Fedora docling install
 ![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bs97icmg6rxw3fw38g2k.png)
 
 easy ocr install
