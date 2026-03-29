@@ -187,7 +187,8 @@ docling original_scanned_pdfs/french-document.pdf \
   --output ./outputs/
 ```
 Easy OCR output
-![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4ueh79wx2zgw1no3lc2s.png)
+![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/2h60ezp99wgtbcapf1lj.png)
+
  
 ---
 
