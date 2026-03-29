@@ -118,11 +118,14 @@ Windows
 pip install docling
 ```
 
-![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bs97icmg6rxw3fw38g2k.png)
+![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/brumzq82vk1b6ngj9imy.png)
+
 
 easy ocr install
 
-![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/qvmcogez8rvu9nd8g27d.png)
+![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ne60zd1l9etv58rf4bb3.png)
+
+
 
 Windows
 
@@ -131,7 +134,8 @@ Windows
 #### Check for the versions of both docling and easyocr.
 Fedora
 
-![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/j2yid78jnbkjjvbyid7c.png)
+![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/wofmei9f51pais3mzmc0.png)
+
 
 Windows
 
@@ -220,7 +224,8 @@ Install:
 ```bash
 pip install tesseract
 ```
-![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ecj1l6pfot1c0j5z5kdf.png)
+![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/piumpzxzw88oo9rbthn8.png)
+
 
 Tesseract requires a separate language data file for each language. For example, to download Arabic:
 
@@ -254,7 +259,9 @@ pip install tesserocr
 ```
 - install the ocr and check the version.
 
-![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/r22tesedex591hi9sihn.png)
+![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gqjonbsbiowiysdtmfr0.png)
+
+
 - Requires one to install each language package
 
 ![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/254ccx6x0ijcsnuwaf5j.png)
