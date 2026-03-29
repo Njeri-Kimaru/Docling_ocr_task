@@ -275,8 +275,7 @@ docling original_scanned_pdfs/arabic-document.pdf \
 
 ---
 
-## Supported Language Codes
-
+## Supported Language Codes easyocr
 Use these codes with the `--ocr-lang` flag:
 
 | Language | Code | Language | Code |
@@ -290,7 +289,21 @@ Use these codes with the `--ocr-lang` flag:
 | Italian | `it` | Dutch | `nl` |
 | Telugu | `te` | | |
 
----
+## Supported Language Codes — Tesseract OCR, Tesserocr and Rapidocr
+Use these codes with the `--ocr-lang` flag:
+
+| Language | Code | Language | Code |
+|---|---|---|---|
+| English | `eng` | Arabic | `ara` |
+| Hindi | `hin` | Chinese (Simplified) | `chi_sim` |
+| French | `fra` | Chinese (Traditional) | `chi_tra` |
+| German | `deu` | Japanese | `jpn` |
+| Spanish | `spa` | Korean | `kor` |
+| Portuguese | `por` | Russian | `rus` |
+| Italian | `ita` | Dutch | `nld` |
+| Telugu | `tel` | | |
+
+
 ### Why these OCR engines
 - I used easy OCR as it is really easy to use
 - The Rapid OCR is really fast.
@@ -300,14 +313,15 @@ Use these codes with the `--ocr-lang` flag:
 #### 1. Easyocr
 - It is easy to use you just install easyocr then input your parsing code and that's it.
 - However, it takes a lot of time to parse your document, it is realy slow.
-- Doesn't give the best results. Gave a completely different and poor french output compared to other ocr-engines
+- Doesn't give the best results. Gave a poor french output compared to other ocr-engines
+- I also noticed easyocr uses different language codes for different languages compared to the other ocr engines.
 
 #### 2. Rapidocr
 - You have to install onnxruntime.
 - As the word itself says it is really fast and installation is not complex at all.
 
 #### 3. Tesseract
-- You have to install a lot more packages hence the installation is really complex.
+- You have to install a lot more language packages hence the installation is really complex.
 - For every language you must upload it's own package. 
 - Give really good results.
 
@@ -321,6 +335,16 @@ Use these codes with the `--ocr-lang` flag:
 ![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ej4afzq4pwd21m77q915.png)
 
 
-Result Findimgs
+## Result Findimgs
 - Other than differing character changes in the french document outputs, the ocr-engines gave almost similar results for the scanned pdfs.
 - I used markdown format and it was pretty good.
+- Easyocr only combines specific languages , well, I used a multilingual arabic and french scanned document but easyocr could not parse it because of the language combination. The rest of the documents parsed the scanned arabic and french pdf really well and gave good results.
+![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5asizbb2sd6d5te84bpg.png)
+
+## Using of AI
+- I used claude to correct some of the errors I got.
+
+
+
+
+  
