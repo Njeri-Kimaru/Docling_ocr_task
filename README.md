@@ -340,6 +340,9 @@ Use these codes with the `--ocr-lang` flag:
 - I used markdown format and it was pretty good.
 - Easyocr only combines specific languages , well, I used a multilingual arabic and french scanned document but easyocr could not parse it because of the language combination. The rest of the documents parsed the scanned arabic and french pdf really well and gave good results.
 ![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5asizbb2sd6d5te84bpg.png)
+- Tried using html and I noticed it doesn't extract all the text from the scanned pdfs
+![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/638dj9uf85wfhxxs91nn.png)
+
 
 ## Using of AI
 - I used claude to correct some of the errors I got.
