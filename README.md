@@ -108,9 +108,6 @@ source venv\Scripts\activate          # Windows
 Fedora
 ![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/p0dd2jyt5tohbfvdfvxy.jpeg)
 
-Windows
-
-![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5hj3pb47r0hyvqaaifh7.jpeg)
 
 **3. Install Docling and easy ocr** (this may take a few minutes):
 
@@ -122,24 +119,26 @@ pip install docling
 
 
 easy ocr install
+```
+pip install easyocr
+```
 
 ![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ne60zd1l9etv58rf4bb3.png)
 
 
 
-Windows
-
-![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5f45c9xjk6zi6hbhk4px.jpeg)
-
 #### Check for the versions of both docling and easyocr.
+```
+docling --version
+```
+```
+pip show easyocr
+```
 Fedora
 
 ![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/wofmei9f51pais3mzmc0.png)
 
 
-Windows
-
-![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zks7nbt169d9kmumufez.jpeg)
 
 **4. Create an output folder:**
 
@@ -174,6 +173,7 @@ Install:
 
 ```bash
 pip install easyocr
+pip show easyocr #for version 
 ```
 
 Run:
@@ -198,6 +198,7 @@ Install:
 
 ```bash
 pip install rapidocr
+pip show rapidocr #for version
 pip install onnxruntime    # required dependency
 ```
 ![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/yyg3jn3ibr1r4mo9tle6.jpeg)
@@ -224,6 +225,7 @@ Install:
 
 ```bash
 pip install tesseract
+pip show tesseract #for version
 ```
 ![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/piumpzxzw88oo9rbthn8.png)
 
@@ -252,18 +254,23 @@ docling original_scanned_pdfs/arabic-document.pdf \
 ### 4. TesserOCR
 
 TesserOCR uses Tesseract internally and provides a Python binding.
-
+- install the ocr and check the version.
 Install:
 
 ```bash
 pip install tesserocr
+pip show tesserocr #for version
 ```
-- install the ocr and check the version.
 
 ![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gqjonbsbiowiysdtmfr0.png)
 
 
 - Requires one to install each language package
+```
+wget -P /directory-to-where-you-want-to-store/tessdata \
+  https://github.com/tesseract-ocr/tessdata/raw/main/fra.traineddata \
+  https://github.com/tesseract-ocr/tessdata/raw/main/ara.traineddata
+```
 
 ![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/254ccx6x0ijcsnuwaf5j.png)
 
@@ -278,6 +285,7 @@ docling original_scanned_pdfs/arabic-document.pdf \
   --to md \
   --output ./outputs/
 ```
+Here's the output;
 ![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3k69j6f7e37mwcpnotmm.png)
 
 
