@@ -335,6 +335,7 @@ Use these codes with the `--ocr-lang` flag:
 #### 2. Rapidocr
 - You have to install onnxruntime.
 - As the word itself says it is really fast and installation is not complex at all.
+- Something else I noticed with rapidocr engine one does not have to specify the language when running the code.
 
 #### 3. Tesseract
 - You have to install a lot more language packages hence the installation is really complex.
@@ -351,7 +352,7 @@ Use these codes with the `--ocr-lang` flag:
 ![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ej4afzq4pwd21m77q915.png)
 
 
-## Result Findimgs
+## Result Findings
 - Other than differing character changes in the french document outputs, the ocr-engines gave almost similar results for the scanned pdfs.
 - I used markdown format and it was pretty good.
 - Easyocr only combines specific languages , well, I used a multilingual arabic and french scanned document but easyocr could not parse it because of the language combination. The rest of the documents parsed the scanned arabic and french pdf really well and gave good results.
